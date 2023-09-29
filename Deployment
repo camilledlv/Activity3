@@ -1,0 +1,23 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+url = 'https://raw.githubusercontent.com/useless1801/Data_Customer/main/Data_Startups.csv'
+df = pd.read_csv(url)
+print(df)
+dataset = df.drop (['City'], axis = 1)
+
+X = dataset.iloc[:, :-1].values
+y = dataset.iloc[:, 3].values
+
+X
+
+y
+
+from sklearn.impute import SimpleImputer
+imputa = SimpleImputer(missing_values= np.nan, strategy='mean')
+imputa.fit(X[:, 0:3])
+
+X[:, 0:3] = imputa.transform(X[:, 0:3])
+
+print(X)
