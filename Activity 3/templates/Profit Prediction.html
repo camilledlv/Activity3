@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///C:/Users/My%20PC/Documents/4TH%20YEAR/camille.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- Make it compatible with mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Prediction</title>
+    <style>
+        body {
+            background: #f2f2f2; /* Light gray background */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .login {
+            text-align: center;
+            color: #333; /* Dark gray text color */
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            background: #fff; /* White background for the login box */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 100%;
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555; /* Darker background color on hover */
+        }
+        h4 {
+            color: violet;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>Profit Prediction</h1>
+        <!-- Action should be a valid URL where the form data will be sent -->
+        <form action="{{ url_for('predict')}}"method="post">
+            <input type="text"  id="r_d_expenses" name="r_d_expenses" placeholder="R&D Expenses *" value="" required/><br>
+      <input type="text"  id="marketing_expenses" name="marketing_expenses" placeholder="Marketing Expenses *" value="" required/><br>
+      <input type="text"  id="administration_expenses" name="administration_expenses" placeholder="Administration Expenses *" value="" required/><p>
+            
+             <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button></p>
+   
+        </form>
+        <h4 style="color:rgb(4, 57, 162);">{{ Result }}</h4>
+    </div>
+
+
+</body>
+</html>
